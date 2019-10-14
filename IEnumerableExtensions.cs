@@ -13,6 +13,7 @@ namespace General {
 		}
 
 		public static IEnumerable<int> Indices<T>(this IEnumerable<T> source) where T : IIndexed => source.Select(t => t.idx);
+		public static IEnumerable<string> Names<T>(this IEnumerable<T> source) where T : INamed => source.Select(t => t.name);
 
 		public static IEnumerable<T> SkipFirstMatch<T>(this IEnumerable<T> source, Func<T, bool> predicate) {
 			bool seen = false;
